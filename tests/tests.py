@@ -3,14 +3,14 @@ import hashlib
 import binascii
 import randcam
 
-byteArray = bytearray("randcam is a good project", "utf-8")
+byte_array = bytearray("randcam is a good project", "utf-8")
 
 
 class RandomTest(unittest.TestCase):
 
     def test_random(self):
         m = hashlib.sha256()
-        m.update(byteArray)
+        m.update(byte_array)
         digest = m.digest()
 
         self.assertEqual(binascii.hexlify(digest).decode("utf-8"),
@@ -18,8 +18,9 @@ class RandomTest(unittest.TestCase):
 
 
 class ShannonTest(unittest.TestCase):
+
     def test_shannon(self):
-        entropy = randcam.shannon_entropy(byteArray)
+        entropy = randcam.shannon_entropy(byte_array)
 
         self.assertEqual(entropy, 3.7034651896016464)
 
