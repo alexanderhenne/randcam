@@ -14,7 +14,7 @@ class RandCam(object):
     def __enter__(self):
         return self
 
-    def seed(self, minimum_entropy):
+    def seed(self, minimum_entropy=0):
         if minimum_entropy > 0:
             while True:
                 result, image = self.feed.read()
