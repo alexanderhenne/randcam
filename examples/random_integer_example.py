@@ -1,6 +1,6 @@
 from randcam import RandCam
 
-with RandCam(0, False) as rc:
+with RandCam(0, True) as rc:
     print("seeding...")
 
     while True:
